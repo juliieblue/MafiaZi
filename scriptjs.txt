@@ -1,0 +1,32 @@
+const players = ['HA', 'YA', 'YO', 'AS', 'MA'];
+let currentRoom = 'mafia';
+let selectedPlayer = null;
+
+function switchRoom(room) {
+  currentRoom = room;
+  selectedPlayer = null;
+  renderPlayers();
+}
+
+function renderPlayers() {
+  const container = document.getElementById('playerArea');
+  container.innerHTML = `<h2>${currentRoom === 'mafia' ? 'Mafia Shootin 💀' : 'Doc Healin 🩹'}</h2>`;
+  
+  players.forEach((name, index) => {
+    const btn = document.createElement('button');
+    btn.className = 'player-btn';
+    btn.textContent = name;
+    if (selectedPlayer === index) btn.classList.add('selected');
+
+    btn.onclick = () => {
+      selectedPlayer = index;
+      renderPlayers();
+    };
+    
+    container.appendChild(btn);
+  });
+}
+
+window.onload = () => {
+  renderPlayers();
+};

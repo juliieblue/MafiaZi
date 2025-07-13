@@ -1,0 +1,19 @@
+!DOCTYPE html>
+<html>
+<head>
+  <title>Mafia Game Helper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Mafia Game Helper</h1>
+
+  <div id="controls">
+    <button onclick="switchRoom('mafia')">Mafia Shootin 💀</button>
+    <button onclick="switchRoom('doctor')">Doc Healin 🩹</button>
+  </div>
+
+  <div id="playerArea"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
